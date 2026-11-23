@@ -15,9 +15,8 @@ SERVERS = {
     "expense-tracker-remote": {
           "transport": "streamable_http",
           "url": "https://njnjpj.fastmcp.app/mcp",
-          "headers": {
-              "Authorization": f"Bearer {os.environ['HORIZON_API_KEY']}"
-          }
+          "headers": {"X-API-Key": "sk_nitin_secret_123"}
+            #   "Authorization": f"Bearer {os.environ['HORIZON_API_KEY']}"
       }
 }
 
@@ -27,7 +26,7 @@ async def main():
 
     agent = create_agent(llm, tools)
 
-    response = await agent.ainvoke({'messages': [HumanMessage(content="Add an expense of Rs 1000 for fruits on 23 Nov 2026")]})
+    response = await agent.ainvoke({'messages': [HumanMessage(content="I have paid 16133 Rs for Term Insurance today, please add in my expense")]})
 
     print(response['messages'][-1].content)
 
