@@ -1,0 +1,23 @@
+[project]
+name = "mcp-client"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Nitin Jain", email = "j89nitin@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "langchain>=1.5.2",
+    "langchain-groq>=1.2.1",
+    "langchain-mcp-adapters>=0.3.2",
+    "python-dotenv>=1.2.4",
+    "streamlit>=1.67.0",
+]
+
+[project.scripts]
+mcp-client = "mcp_client:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
